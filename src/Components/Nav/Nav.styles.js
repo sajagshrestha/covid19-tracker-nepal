@@ -3,8 +3,12 @@ import styled from "styled-components";
 export const NavContainer = styled.div`
     width: 100%;
     height: 4em;
-    background-color: #fff;
+    background-color: ${(props) => props.theme.background};
+
     display: flex;
+    * {
+        color: ${(props) => props.theme.text};
+    }
 
     align-items: center;
     justify-content: space-around;
@@ -17,7 +21,6 @@ export const NavContainer = styled.div`
         align-items: center;
         .navlinks {
             a {
-                color: black;
                 text-decoration: none;
                 margin: 0 20px;
             }
