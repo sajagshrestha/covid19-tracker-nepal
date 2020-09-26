@@ -1,16 +1,29 @@
+//import dependencies
 import React from "react";
-import styled from "styled-components";
-//global css
-const Main = styled.div`
-    background-color: #1e2025;
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-`;
-//main App component
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+//import styles
+import { Main } from "./App.styles";
+//import components
+import About from "./Components/About/About";
+import Home from "./Components/Home/Home";
+import Nav from "./Components/Nav/Nav";
+//Main component
 const App = () => {
-    return <Main>Hello world</Main>;
+    return (
+        <Main>
+            <Router>
+                <Nav />
+                <Switch>
+                    <Route exact path="/">
+                        <Home />
+                    </Route>
+                    <Route exact path="/about">
+                        <About />
+                    </Route>
+                </Switch>
+            </Router>
+        </Main>
+    );
 };
 
 export default App;
