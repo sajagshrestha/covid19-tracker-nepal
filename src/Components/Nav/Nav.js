@@ -1,12 +1,16 @@
 import React from "react";
 import { NavContainer } from "./Nav.styles";
 import { Link } from "react-router-dom";
-
+const ls = require("local-storage");
 const Nav = ({ darkMode, setDarkMode }) => {
     const darkModeToggle = () => {
         if (darkMode === true) {
+            ls.set("darkMode", false);
             setDarkMode(false);
-        } else setDarkMode(true);
+        } else {
+            setDarkMode(true);
+            ls.set("darkMode", true);
+        }
 
         console.log(darkMode);
     };

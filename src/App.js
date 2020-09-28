@@ -11,7 +11,12 @@ import Nav from "./Components/Nav/Nav";
 //Main component
 const App = () => {
     //for darkmode toggle
-    const [darkMode, setDarkMode] = useState(true);
+    const ls = require("local-storage");
+    const [darkMode, setDarkMode] = useState(
+        ls.get("darkMode", true) ? true : false
+    );
+
+    //
     return (
         <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
             <Main>
