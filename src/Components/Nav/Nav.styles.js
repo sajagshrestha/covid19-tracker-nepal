@@ -1,29 +1,33 @@
 import styled from "styled-components";
 
 export const NavContainer = styled.div`
-    width: 100%;
-    height: 4em;
+    height: 5em;
     background-color: ${(props) => props.theme.background};
+`;
 
+export const NavWrapper = styled.div`
+    width: 100%;
     display: flex;
-    * {
-        color: ${(props) => props.theme.text};
-    }
-
+    justify-content: space-between;
     align-items: center;
-    justify-content: space-around;
+`;
 
-    .wrapper {
-        width: 90%;
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: space-between;
-        align-items: center;
-        .navlinks {
-            a {
-                text-decoration: none;
-                margin: 0 20px;
-            }
-        }
+export const Logo = styled.div`
+    .web-logo{
+        height:100%;
+        width:8rem
+    }
+`;
+
+export const NavLinks = styled.div`
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    a {
+        font-size: 1.2rem;
+        text-decoration: none;
+        color: ${(props) => props.theme.text};
     }
 `;

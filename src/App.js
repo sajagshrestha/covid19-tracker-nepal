@@ -15,7 +15,6 @@ const App = () => {
     const [darkMode, setDarkMode] = useState(
         ls.get("darkMode", true) ? true : false
     );
-
     //
     return (
         <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
