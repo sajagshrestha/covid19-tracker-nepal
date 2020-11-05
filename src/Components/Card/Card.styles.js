@@ -2,9 +2,13 @@ import styled from 'styled-components'
 
 export const CardBody = styled.div`
     height:90px;
-    min-width:180px;
+    width:90%;
     border-radius:10px;
     display:flex;
+    @media screen and (min-width:720px){
+        justify-self:${props=>props.justify ? props.justify: ""};
+    }
+   
     background-color:${(props)=>{
         var color = ''
        switch(props.type){
@@ -32,6 +36,13 @@ export const CardBody = styled.div`
         color:white;
         .data{
             font-size:2rem;
+        }
+    }
+    @media screen and (max-width:720px){
+        height:120px;
+        width:250px;
+        .data-section{
+            margin-right:30px;
         }
     }
 `;

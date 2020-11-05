@@ -4,7 +4,7 @@ import {CardBody} from './Card.styles'
 const Card = (props) =>{
     return(
         
-        <CardBody type = {props.type}>
+        <CardBody type = {props.type} justify={props.justify}>
             <div className="logo">
             <img src={props.icon} alt ="" height="30px" width="30px"/>
             </div>

@@ -24,10 +24,12 @@ export const NavLinks = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     a {
         font-size: 1.2rem;
         text-decoration: none;
         color: ${(props) => props.theme.text};
+    }
+    @media screen and (max-width: 850px){
+        display:none;
     }
 `;
