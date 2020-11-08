@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Card from '../Card/Card.js';
 import {Wrapper} from '../../App.styles'
-import {LatestUpdateWrapper,OverallKDR} from './LatestUpdate.styles'
+import {LatestUpdateWrapper,OverallKDR,DistrictKDR} from './LatestUpdate.styles'
 import DeathIcon from './death.png';
 import RecoverdIcon from './recovered.png';
 import NewCasesIcon from './newCases.png';
-
+import SelectDistrict from '../SelectDistrict/SelectDistrict';
 const api = "https://covid19.mohp.gov.np/covid/api/confirmedcases";
 
 const LatestUpdate = () => {
@@ -38,7 +38,12 @@ const LatestUpdate = () => {
                     </Wrapper>   
                 </div>
             </OverallKDR>
-            <div></div>
+            <DistrictKDR>
+                <div className="title">
+                    <div className="latest-update">By District</div>
+                    <SelectDistrict className='select-district'/> 
+                </div>
+            </DistrictKDR>
         </LatestUpdateWrapper>
     
     );

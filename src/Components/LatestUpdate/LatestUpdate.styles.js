@@ -30,7 +30,8 @@ export const OverallKDR =styled.div`
         width:90%;
         margin: 0 auto;
         display:grid;
-        grid-template-columns:5fr 3fr;
+        grid-template-columns:5fr 4fr;
+        
         align-items:center;
         color:${props=>props.theme.text};
         .latest-update{
@@ -78,5 +79,8 @@ export const OverallKDR =styled.div`
             }
         }
     }
-
+`;
+export const DistrictKDR = styled(OverallKDR)`
+    .select-district{
+    }
 `;

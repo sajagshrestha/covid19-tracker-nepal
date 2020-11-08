@@ -3,16 +3,22 @@ import styled from "styled-components";
 export const darkTheme = {
     background: "#1e2025",
     text: "white",
-    death:'#EB3B3B',
+    death:'#E13C3C',
     recoverd:'#1AB569',
     newCases:'#2D9CFC',
+    selectBackground:"#15171A",
+    selectText:"#6A6B6F",
+    selectHover:'#202327',
 };
 export const lightTheme = {
     background: "white",
     text: "#1e2025",
-    death:'#EB3B3B',
+    death:'#E13C3C',
     recoverd:'#1AB569',
     newCases:'#2D9CFC',
+    selectBackground:"#ECECEC",
+    selectText:"#6A6B6F",
+    selectHover:'#202327',
 };
 export const Main = styled.div`
     background-color: ${(props) => props.theme.background};
