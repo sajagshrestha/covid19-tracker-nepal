@@ -1,6 +1,7 @@
 import React from 'react';
 import {CustomSelect} from "./SelectDistrict.styles";
 const districtOptions = [
+    {value:"", label:"Select a District"},
   { value: "Bhojpur", label: "Bhojpur" },
   { value: "Dhankuta", label: "Dhankuta" },
   { value: "Ilam", label: "Ilam" },
@@ -80,12 +81,12 @@ const districtOptions = [
   { value: "Kanchanpur", label: "Kanchanpur" }
 ];
 
-const SelectDistrict = () =>{
+const SelectDistrict = ({setDistrict}) =>{
     return(
         <CustomSelect
             classNamePrefix={'Select'}
             options={districtOptions}
-           
+            onChange={e=>setDistrict(e.value)}   
             isSearchable
             placeholder="Select a district"
         />

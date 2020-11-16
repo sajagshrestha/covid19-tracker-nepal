@@ -6,6 +6,7 @@ export const CustomSelect = styled(ReactSelect)`
         background-color: ${(props =>props.theme.selectBackground)};
         border: none;
         box-shadow: none;
+        min-width:300px;
         
     }
     .Select__input{
@@ -30,6 +31,7 @@ export const CustomSelect = styled(ReactSelect)`
     }
     .Select__menu-list{
         height:200px;
+       
         &::-webkit-scrollbar{
             width: 10px;
         }

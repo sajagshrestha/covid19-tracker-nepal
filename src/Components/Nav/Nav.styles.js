@@ -25,7 +25,7 @@ export const NavLinks = styled.div`
     justify-content: space-between;
     align-items: center;
     a {
-        font-size: 1.2rem;
+        font-size: 1rem;
         text-decoration: none;
         color: ${(props) => props.theme.text};
     }
