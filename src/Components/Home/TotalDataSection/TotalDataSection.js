@@ -1,22 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { TotalDataSectionWrapper } from "../Home.styles";
+import DoughnutChart from "./DoughnutChart";
+import BarChart from "./BarChart";
 import TotalData from "./TotalData";
-const findPercent = (total, current) => {
-  return;
-};
+
 const TotalDataSection = ({ caseData }) => {
-  const [caseDataPercentage, setCaseDataPercentage] = useState({
-    active: "0%",
-    recovered: "0%",
-    deaths: "0%",
-  });
-  useEffect(() => {
-    console.log(((170632 / 208299) * 100).toFixed(2));
-  }, []);
   return (
     <TotalDataSectionWrapper>
       <TotalData caseData={caseData} />
-      <div>Doughnut chart</div>
+      <DoughnutChart caseData={caseData} />
+      <BarChart caseData={caseData} />
     </TotalDataSectionWrapper>
   );
 };

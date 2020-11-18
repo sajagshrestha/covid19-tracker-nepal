@@ -1,35 +1,33 @@
 import styled from "styled-components";
 
 export const NavContainer = styled.div`
-    height: 5em;
-    background-color: ${(props) => props.theme.background};
+  height: 5em;
+  background-color: ${(props) => props.theme.background};
 `;
 
 export const NavWrapper = styled.div`
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 export const Logo = styled.div`
-    .web-logo{
-        height:100%;
-        width:8rem
-    }
+  .web-logo {
+    height: 100%;
+    width: 8rem;
+  }
 `;
 
 export const NavLinks = styled.div`
-    width: 25%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    a {
-        font-size: 1rem;
-        text-decoration: none;
-        color: ${(props) => props.theme.text};
-    }
-    @media screen and (max-width: 850px){
-        display:none;
-    }
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  .dark-mode {
+    font-size: 1rem;
+    text-decoration: none;
+    margin-right: 15px;
+    color: ${(props) => props.theme.text};
+  }
 `;

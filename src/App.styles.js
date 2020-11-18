@@ -24,14 +24,15 @@ export const lightTheme = {
   selectBackground: "#ECECEC",
   selectText: "#6A6B6F",
   selectHover: "#202327",
-  border: "none",
+  border: "dashed white 2px",
 };
 export const Main = styled.div`
   background-color: ${(props) => props.theme.background};
+  min-width: 360px;
   min-height: 100vh;
-  min-width: 400px;
   margin: 0;
   padding: 0;
+  overflow: auto;
 `;
 
 export const Wrapper = styled.div`
