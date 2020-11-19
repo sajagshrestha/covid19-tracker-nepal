@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { HomeWrapper } from "./Home.styles";
 import { Wrapper } from "../../App.styles";
 import LatestUpdate from "./LatestUpdateSection/LatestUpdate";
 import TotalDataSection from "./TotalDataSection/TotalDataSection";
@@ -16,8 +17,10 @@ const Home = () => {
   }, [caseData.Date]);
   return (
     <Wrapper>
-      <LatestUpdate caseData={caseData} />
-      <TotalDataSection caseData={caseData} />
+      <HomeWrapper>
+        <LatestUpdate caseData={caseData} />
+        <TotalDataSection caseData={caseData} />
+      </HomeWrapper>
     </Wrapper>
   );
 };

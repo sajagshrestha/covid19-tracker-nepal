@@ -7,6 +7,7 @@ import { Main, darkTheme, lightTheme } from "./App.styles";
 //import components
 import Home from "./Components/Home/Home";
 import Nav from "./Components/Nav/Nav";
+import Footer from "./Components/Footer/Footer";
 //Main component
 const App = () => {
   //for darkmode toggle
@@ -23,6 +24,7 @@ const App = () => {
           <Switch>
             <Route exact path="/">
               <Home />
+              <Footer />
             </Route>
           </Switch>
         </Router>

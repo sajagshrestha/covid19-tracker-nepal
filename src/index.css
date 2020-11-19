@@ -5,10 +5,3 @@
   margin: 0;
   font-family: "Rubik", sans-serif;
 }
-html,
-body {
-  overflow: auto;
-}
-#root {
-  height: 100%;
-}

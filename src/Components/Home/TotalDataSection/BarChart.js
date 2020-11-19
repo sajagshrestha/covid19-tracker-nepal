@@ -1,17 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Bar } from "react-chartjs-2";
-import { BarChartWrapper } from "../Home.styles";
-const CalculateProvinceSum = (data, provinceName) => {
-  let sum = 0;
-  data.forEach((e) => {
-    if (e.Province === provinceName) {
-      sum += parseInt(e.Value, 10);
-    }
-  });
-  return sum;
-};
+import { BarChartWrapper, Loader } from "../Home.styles";
+import ReactLoading from "react-loading";
 const BarChart = ({ caseData }) => {
+  const [isLoading, setLoading] = useState(true);
   const [ProvinceData, setProvinceData] = useState({
     "Province 1": 0,
     "Province 2": 0,
@@ -24,66 +17,99 @@ const BarChart = ({ caseData }) => {
   useEffect(() => {
     if (caseData.date) {
       const api = `https://portal.edcd.gov.np/rest/api/fetch?filter=casesBetween&type=dayByDay&sDate=2020-01-01&eDate=${caseData.date}&disease=COVID-19`;
-      axios.get(api).then((res) => {
-        const data = res.data;
-        let province1Sum = CalculateProvinceSum(data, "Province 1");
-        let province2Sum = CalculateProvinceSum(data, "Province 2");
-        let bagmatiSum = CalculateProvinceSum(data, "Bagmati");
-        let gandakiSum = CalculateProvinceSum(data, "Gandaki");
-        let province5Sum = CalculateProvinceSum(data, "Province 5");
-        let karnaliSum = CalculateProvinceSum(data, "Karnali");
-        let sudarpaschimSum = CalculateProvinceSum(data, "Sudarpaschim");
+      axios
+        .get(api)
+        .then((res) => {
+          const data = res.data;
+          let province1Sum = 0;
+          let province2Sum = 0;
+          let bagmatiSum = 0;
+          let gandakiSum = 0;
+          let province5Sum = 0;
+          let karnaliSum = 0;
+          let sudarpaschimSum = 0;
+          data.forEach((e) => {
+            if (e.Province === "Province 1") {
+              province1Sum += parseInt(e.Value, 10);
+            }
+            if (e.Province === "Province 2") {
+              province2Sum += parseInt(e.Value, 10);
+            }
+            if (e.Province === "Bagmati") {
+              bagmatiSum += parseInt(e.Value, 10);
+            }
+            if (e.Province === "Gandaki") {
+              gandakiSum += parseInt(e.Value, 10);
+            }
+            if (e.Province === "Province 5") {
+              province5Sum += parseInt(e.Value, 10);
+            }
 
-        setProvinceData({
-          "Province 1": province1Sum,
-          "Province 2": province2Sum,
-          Bagmati: bagmatiSum,
-          Gandaki: gandakiSum,
-          "Province 5": province5Sum,
-          Karnali: karnaliSum,
-          Sudurpaschim: sudarpaschimSum,
-        });
-      });
+            if (e.Province === "Karnali") {
+              karnaliSum += parseInt(e.Value, 10);
+            }
+            if (e.Province === "Sudurpaschim") {
+              sudarpaschimSum += parseInt(e.Value, 10);
+            }
+          });
+          setProvinceData({
+            "Province 1": province1Sum,
+            "Province 2": province2Sum,
+            Bagmati: bagmatiSum,
+            Gandaki: gandakiSum,
+            "Province 5": province5Sum,
+            Karnali: karnaliSum,
+            Sudurpaschim: sudarpaschimSum,
+          });
+          setLoading(false);
+        })
+        .catch((error) => console.log(error));
     }
   }, [caseData.date]);
   const barData = {
-    labels: ["Active Cases", "Recovered", "deaths"],
+    labels: [
+      "Province 1",
+      "Province 2",
+      "Bagmati",
+      "Gandaki",
+      "Province 5",
+      "Karnali",
+      "Sudarpaschim",
+    ],
     datasets: [
       {
-        label: "Total data",
-        data: [ProvinceData.Bagmati, ProvinceData.Gandaki, 500],
-        backgroundColor: ["#DA8F54", "#519872", "#ca3e47"],
-        borderWidth: 0,
+        label: "Total Cases",
+        data: [
+          ProvinceData["Province 1"],
+          ProvinceData["Province 2"],
+          ProvinceData.Bagmati,
+          ProvinceData.Gandaki,
+          ProvinceData["Province 5"],
+          ProvinceData.Gandaki,
+          ProvinceData.Sudurpaschim,
+        ],
+        backgroundColor: "#226b80",
       },
     ],
   };
-  const options = {
-    cutoutPercentage: 70,
-    maintainAspectRatio: false,
-    legend: {
-      position: "left",
-    },
-    tooltips: {
-      callbacks: {
-        label: function (tooltipItem, data) {
-          var dataset = data.datasets[tooltipItem.datasetIndex];
-          var meta = dataset._meta[Object.keys(dataset._meta)[0]];
-          var total = meta.total;
-          var currentValue = dataset.data[tooltipItem.index];
-          var percentage = parseFloat(
-            ((currentValue / total) * 100).toFixed(2)
-          );
-          return currentValue + " (" + percentage + "%)";
-        },
-        title: function (tooltipItem, data) {
-          return data.labels[tooltipItem[0].index];
-        },
-      },
-    },
-  };
+
   return (
     <BarChartWrapper>
-      <Bar data={barData} options={options} />
+      <div className="title">Total Data By Province</div>
+      <div className="chart">
+        {isLoading ? (
+          <Loader>
+            <ReactLoading
+              type={"bars"}
+              color={"#FE4F60"}
+              height={"100px"}
+              width={"100px"}
+            />
+          </Loader>
+        ) : (
+          <Bar data={barData} options={{ maintainAspectRatio: false }} />
+        )}
+      </div>
     </BarChartWrapper>
   );
 };

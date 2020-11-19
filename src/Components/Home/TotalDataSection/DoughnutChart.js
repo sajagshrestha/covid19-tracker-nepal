@@ -16,8 +16,9 @@ const DoughnutChart = ({ caseData }) => {
   const options = {
     cutoutPercentage: 70,
     maintainAspectRatio: false,
+    responsive: true,
     legend: {
-      position: "left",
+      position: "bottom",
     },
     tooltips: {
       callbacks: {
@@ -40,6 +41,7 @@ const DoughnutChart = ({ caseData }) => {
 
   return (
     <DoughnutChartWrapper>
+      <div className="title">Total data</div>
       <div className="chart">
         <Doughnut
           data={data}
