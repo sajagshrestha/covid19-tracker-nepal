@@ -1,16 +1,25 @@
 import styled from "styled-components";
 
-export const FooterWrapper = styled.div`
+export const FooterContainer = styled.div`
   height: 3em;
-  padding: 0 10px;
+  background-color: ${(props) => props.theme.secondaryBackground};
+  box-shadow: ${(props) => props.theme.boxShadow};
+`;
+export const FooterWrapper = styled.div`
   width: 100%;
-
-  color: ${(props) => props.theme.text};
-  font-size: 1rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  .contact {
+    width: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   .source {
-    justify-self: end;
+    a {
+      color: ${(props) => props.theme.text};
+      text-decoration: none;
+    }
   }
 `;

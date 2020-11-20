@@ -60,8 +60,8 @@ export const CardBody = styled.div`
 
 export const DistrictCardWrapper = styled(CardBody)`
   width: ${(props) => (props.type === "singleDistrict" ? "27%" : "")};
-  background-color: #26292e;
-  color: white;
+  background-color: ${(props) => props.theme.districtCardBackground};
+  color: ${(props) => props.theme.DistrictCardText};
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
   justify-items: center;

@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const NavContainer = styled.div`
   height: 5em;
-  background-color: ${(props) => props.theme.background};
+  background-color: ${(props) => props.theme.secondaryBackground};
+  box-shadow: ${(props) => props.theme.boxShadow};
 `;
 
 export const NavWrapper = styled.div`

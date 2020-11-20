@@ -24,7 +24,7 @@ export const LatestUpdateWrapper = styled.div`
 `;
 
 export const OverallKDRWrapper = styled.div`
-  border: ${(props) => props.theme.border};
+  border: ${(props) => props.theme.sideBorder};
   border-style: none dashed none none;
   display: grid;
 
@@ -55,7 +55,8 @@ export const OverallKDRWrapper = styled.div`
     }
   }
   @media screen and (max-width: 1120px) {
-    border-style: none;
+    border: ${(props) => props.theme.sideBorder};
+    border-style: none none dashed none;
   }
   @media screen and (max-width: 720px) {
     grid-row-gap: 0;

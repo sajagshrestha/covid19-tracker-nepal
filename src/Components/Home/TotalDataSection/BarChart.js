@@ -95,7 +95,7 @@ const BarChart = ({ caseData }) => {
 
   return (
     <BarChartWrapper>
-      <div className="title">Total Data By Province</div>
+      <div className="title">Total Cases By Province</div>
       <div className="chart">
         {isLoading ? (
           <Loader>
@@ -107,7 +107,15 @@ const BarChart = ({ caseData }) => {
             />
           </Loader>
         ) : (
-          <Bar data={barData} options={{ maintainAspectRatio: false }} />
+          <Bar
+            data={barData}
+            options={{
+              maintainAspectRatio: false,
+              legend: {
+                position: "bottom",
+              },
+            }}
+          />
         )}
       </div>
     </BarChartWrapper>

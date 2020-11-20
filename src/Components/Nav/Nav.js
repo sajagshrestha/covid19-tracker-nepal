@@ -47,6 +47,7 @@ const Nav = ({ darkMode, setDarkMode }) => {
           <NavLinks>
             <div className="dark-mode">Dark Mode</div>
             <FormControlLabel
+              style={{ marginRight: 0 }}
               control={<MySwitch onChange={darkModeToggle} checked={checked} />}
             />
           </NavLinks>

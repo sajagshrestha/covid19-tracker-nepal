@@ -38,7 +38,7 @@ export const CustomSelect = styled(ReactSelect)`
       background: ${(props) => props.theme.selectBackground};
     }
     &::-webkit-scrollbar-thumb {
-      background: ${(props) => props.theme.selectText};
+      background: ${(props) => props.theme.selectHover};
     }
   }
 `;

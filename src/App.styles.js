@@ -13,11 +13,14 @@ export const darkTheme = {
   selectText: "#6A6B6F",
   selectHover: "#202327",
   border: "dashed #424242 2px",
+  sideBorder: "#424242 2px",
   boxShadow: "none",
+  DistrictCardText: "white",
+  districtCardBackground: "#26292e",
 };
 export const lightTheme = {
-  background: "white",
-  secondaryBackground: "#F7F7F7",
+  background: "#F6F9FA",
+  secondaryBackground: "white",
   text: "#1e2025",
   death: "#ca3e47",
   recoverd: "#519872",
@@ -26,9 +29,12 @@ export const lightTheme = {
   totalCases: "#226b80",
   selectBackground: "#ECECEC",
   selectText: "#6A6B6F",
-  selectHover: "#202327",
-  border: "#F7F7F7 2px",
-  boxShadow: "0px 0px 37px -21px rgba(166,164,166,1)",
+  selectHover: "#E1E0E0",
+  border: "white 2px",
+  sideBorder: "#ECECEC 2px",
+  DistrictCardText: "#6A6B6F",
+  districtCardBackground: "#ECECEC",
+  boxShadow: "0px 0px 27px -21px rgba(166,164,166,1)",
 };
 export const Main = styled.div`
   background-color: ${(props) => props.theme.background};
