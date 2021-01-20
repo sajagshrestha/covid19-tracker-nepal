@@ -1,2 +1,4 @@
-local coviid-19 tracker using react
-Demo : https://5fb7bedaf385310cabd0f2f1--condescending-mirzakhani-0a220e.netlify.app
+A local Covid-19 tracker made with React to track daily updates and total data
+with data visualization charts.
+
+Demo:https://covid-19-tracker-nepal.herokuapp.com
