@@ -1,14 +1,16 @@
 import styled from "styled-components";
-
-export const darkTheme = {
-	background: "#1e2025",
-	secondaryBackground: "#none",
-	text: "white",
+const commonTheme = {
 	death: "#ca3e47",
 	recoverd: "#519872",
 	newCases: "#3282b8",
 	infected: "#DA8F54",
 	totalCases: "#226b80",
+};
+export const darkTheme = {
+	...commonTheme,
+	background: "#1e2025",
+	secondaryBackground: "#none",
+	text: "white",
 	selectBackground: "#15171A",
 	selectText: "#6A6B6F",
 	selectHover: "#202327",
@@ -19,18 +21,14 @@ export const darkTheme = {
 	districtCardBackground: "#26292e",
 };
 export const lightTheme = {
+	...commonTheme,
 	background: "#F6F9FA",
 	secondaryBackground: "white",
 	text: "#1e2025",
-	death: "#ca3e47",
-	recoverd: "#519872",
-	newCases: "#3282b8",
-	infected: "#DA8F54",
-	totalCases: "#226b80",
 	selectBackground: "#ECECEC",
 	selectText: "#6A6B6F",
 	selectHover: "#E1E0E0",
-	border: "white 2px",
+	border: "dashed transparent 2px",
 	sideBorder: "#ECECEC 2px",
 	DistrictCardText: "#6A6B6F",
 	districtCardBackground: "#ECECEC",
