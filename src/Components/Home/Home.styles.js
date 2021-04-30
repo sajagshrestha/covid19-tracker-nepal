@@ -92,13 +92,18 @@ export const DistrictKDRWrapper = styled(OverallKDRWrapper)`
 		justify-items: center;
 	}
 	h1 {
+		width: 90%;
 		color: ${(props) => props.theme.text};
 		font-size: 1.2rem;
 		margin-top: 2.3rem;
+		text-align: center;
 	}
 	@media screen and (max-width: 720px) {
 		.kdr-data-section-single {
 			align-items: center;
+		}
+		h1 {
+			margin: 0 auto;
 		}
 	}
 `;

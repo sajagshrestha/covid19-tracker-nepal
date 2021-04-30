@@ -53,7 +53,7 @@ const DistrictKDR = ({ data }) => {
 		defaultDistrictData.Bhaktapur,
 		defaultDistrictData.Lalitpur,
 	]);
-	if (data.length === 0) {
+	if (test.length === 0) {
 		return (
 			<DistrictKDRWrapper>
 				<div className="title">
